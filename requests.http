@@ -1,0 +1,40 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+
+# List users
+GET {{host}}/users HTTP/1.1
+
+###
+
+# Create a new user
+POST {{host}}/users HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Margareth",
+  "lastName": "Sulivan",
+  "age": 35
+}
+
+###
+
+# List a user specific
+GET {{host}}/users/62b8f76c-b1e9-43ed-b78f-fcb94e17850a HTTP/1.1
+
+###
+
+# Delete a user specific
+DELETE {{host}}/users/02c0f16f-3597-4f61-9f59-325e8bde4d49 HTTP/1.1
+
+###
+
+# Partial Update/Modify a user specific
+PATCH {{host}}/users/6ed94b70-95c6-4659-9181-013c7802b1b1 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Johnata"
+}
+
+###
