@@ -1,4 +1,4 @@
-@hostname = http://localhost
+@hostname = https://nodejs-express-api2.herokuapp.com
 @port = 5000
 @host = {{hostname}}:{{port}}
 
@@ -8,13 +8,13 @@ GET {{host}}/users HTTP/1.1
 ###
 
 # Create a new user
-POST {{host}}/users HTTP/1.1
+POST {{hostname}}/users HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Margareth",
-  "lastName": "Sulivan",
-  "age": 35
+  "firstName": "Johnny",
+  "lastName": "Doe",
+  "age": 25
 }
 
 ###
