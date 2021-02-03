@@ -1,36 +1,37 @@
-@hostname = https://nodejs-express-api2.herokuapp.com
+@hostProd = https://nodejs-express-api2.herokuapp.com
+@urlLocal = http://localhost
 @port = 5000
-@host = {{hostname}}:{{port}}
+@hostLocal = {{urlLocal}}:{{port}}
 
 # List users
-GET {{host}}/users HTTP/1.1
+GET {{hostLocal}}/users HTTP/1.1
 
 ###
 
 # Create a new user
-POST {{hostname}}/users HTTP/1.1
+POST {{hostLocal}}/users HTTP/1.1
 content-type: application/json
 
 {
-  "firstName": "Johnny",
+  "firstName": "Jane",
   "lastName": "Doe",
-  "age": 25
+  "age": 39
 }
 
 ###
 
 # List a user specific
-GET {{host}}/users/62b8f76c-b1e9-43ed-b78f-fcb94e17850a HTTP/1.1
+GET {{hostLocal}}/users/62b8f76c-b1e9-43ed-b78f-fcb94e17850a HTTP/1.1
 
 ###
 
 # Delete a user specific
-DELETE {{host}}/users/02c0f16f-3597-4f61-9f59-325e8bde4d49 HTTP/1.1
+DELETE {{hostLocal}}/users/02c0f16f-3597-4f61-9f59-325e8bde4d49 HTTP/1.1
 
 ###
 
 # Partial Update/Modify a user specific
-PATCH {{host}}/users/6ed94b70-95c6-4659-9181-013c7802b1b1 HTTP/1.1
+PATCH {{hostLocal}}/users/6ed94b70-95c6-4659-9181-013c7802b1b1 HTTP/1.1
 content-type: application/json
 
 {
